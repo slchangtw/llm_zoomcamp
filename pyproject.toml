@@ -5,6 +5,7 @@ description = ""
 authors = ["slchangtw <shunlung.chang@gmail.com>"]
 license = "MIT"
 readme = "README.md"
+package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.11"
@@ -18,6 +19,8 @@ mistralai = "^0.4.0"
 requests = "^2.32.3"
 tiktoken = "^0.7.0"
 sentence-transformers = "2.7.0"
+kaggle = "^1.6.14"
+rouge = "^1.0.1"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -27,3 +30,4 @@ ipykernel = "^6.29.4"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
