@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 from psycopg2.extras import DictCursor
 from zoneinfo import ZoneInfo
 
-load_dotenv(".env.test")
+load_dotenv(".env")
 
 tz = ZoneInfo("Europe/Berlin")
 

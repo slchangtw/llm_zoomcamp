@@ -1,13 +1,14 @@
 import os
 
 import requests
-from db import init_db
 from dotenv import load_dotenv
 from elasticsearch import Elasticsearch
 from sentence_transformers import SentenceTransformer
 from tqdm.auto import tqdm
 
-load_dotenv(".env.test")
+from db import init_db
+
+load_dotenv(".env")
 
 ES_URL = os.getenv("ES_URL")
 MODEL_NAME = os.getenv("MODEL_NAME")
