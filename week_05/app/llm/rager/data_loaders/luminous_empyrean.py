@@ -3,9 +3,10 @@ import json
 from typing import List, Dict
 
 from mage_ai.shared.hash import dig
-if 'data_loader' not in globals():
+
+if "data_loader" not in globals():
     from mage_ai.data_preparation.decorators import data_loader
-if 'test' not in globals():
+if "test" not in globals():
     from mage_ai.data_preparation.decorators import test
 
 
@@ -25,21 +26,18 @@ def ingest_api_data(*args, **kwargs) -> List[Dict]:
         method (str): HTTP method to use (GET, POST, etc.).
         timeout (int): Request timeout in seconds.
     """
-    endpoint = kwargs.get('endpoint')
-    auth_token = kwargs.get('auth_token')
-    method = kwargs.get('method', 'GET')
-    timeout = kwargs.get('timeout', 30)
-    parser = kwargs.get('parser')
+    endpoint = kwargs.get("endpoint")
+    auth_token = kwargs.get("auth_token")
+    method = kwargs.get("method", "GET")
+    timeout = kwargs.get("timeout", 30)
+    parser = kwargs.get("parser")
 
     headers = {}
     if auth_token:
-        headers['Authorization'] = f"Bearer {auth_token}"
+        headers["Authorization"] = f"Bearer {auth_token}"
 
     response = requests.request(
-        method=method,
-        url=endpoint or  '',
-        headers=headers,
-        timeout=timeout
+        method=method, url=endpoint or "", headers=headers, timeout=timeout
     )
     response.raise_for_status()
     result = response.json()
@@ -55,4 +53,4 @@ def test_output(output, *args) -> None:
     """
     Template code for testing the output of the block.
     """
-    assert output is not None, 'The output is undefined'
+    assert output is not None, "The output is undefined"
